@@ -1,0 +1,10 @@
+PODS:
+  - iOS-color-wheel (0.1)
+
+DEPENDENCIES:
+  - iOS-color-wheel
+
+SPEC CHECKSUMS:
+  iOS-color-wheel: 571e71f6b2a3e15f3d3c7d3a4db4893b1e24040f
+
+COCOAPODS: 0.35.0

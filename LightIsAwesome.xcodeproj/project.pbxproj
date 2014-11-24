@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84B0EAD7D39AC1666DEDCCBC /* libPods-LightIsAwesome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F82B59467D44A397ADCB0DA /* libPods-LightIsAwesome.a */; };
+		9F54D1321A22B936005EF2EC /* BluetoothSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54D1311A22B936005EF2EC /* BluetoothSingleton.m */; };
+		9F54D1341A22B981005EF2EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F54D1331A22B981005EF2EC /* Foundation.framework */; };
+		9FA4152C1A1FF2B000087039 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4152B1A1FF2B000087039 /* main.m */; };
+		9FA4152F1A1FF2B000087039 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4152E1A1FF2B000087039 /* AppDelegate.m */; };
+		9FA415321A1FF2B000087039 /* LightIsAwesome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FA415301A1FF2B000087039 /* LightIsAwesome.xcdatamodeld */; };
+		9FA415351A1FF2B000087039 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA415341A1FF2B000087039 /* ViewController.m */; };
+		9FA415381A1FF2B000087039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA415361A1FF2B000087039 /* Main.storyboard */; };
+		9FA4153A1A1FF2B000087039 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA415391A1FF2B000087039 /* Images.xcassets */; };
+		9FA4153D1A1FF2B000087039 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA4153B1A1FF2B000087039 /* LaunchScreen.xib */; };
+		9FA415491A1FF2B000087039 /* LightIsAwesomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA415481A1FF2B000087039 /* LightIsAwesomeTests.m */; };
+		9FD544A41A1FFACB009D3F85 /* Leg.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD544A11A1FFACB009D3F85 /* Leg.m */; };
+		9FD544A51A1FFACB009D3F85 /* PatternSlice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD544A31A1FFACB009D3F85 /* PatternSlice.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9FA415431A1FF2B000087039 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA4151E1A1FF2B000087039 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FA415251A1FF2B000087039;
+			remoteInfo = LightIsAwesome;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F82B59467D44A397ADCB0DA /* libPods-LightIsAwesome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LightIsAwesome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		535EECFC2E42CBAB5CD18844 /* Pods-LightIsAwesome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightIsAwesome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LightIsAwesome/Pods-LightIsAwesome.debug.xcconfig"; sourceTree = "<group>"; };
+		9F54D1301A22B936005EF2EC /* BluetoothSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothSingleton.h; sourceTree = "<group>"; };
+		9F54D1311A22B936005EF2EC /* BluetoothSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothSingleton.m; sourceTree = "<group>"; };
+		9F54D1331A22B981005EF2EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9FA415261A1FF2B000087039 /* LightIsAwesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightIsAwesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA4152A1A1FF2B000087039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA4152B1A1FF2B000087039 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9FA4152D1A1FF2B000087039 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9FA4152E1A1FF2B000087039 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9FA415311A1FF2B000087039 /* LightIsAwesome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LightIsAwesome.xcdatamodel; sourceTree = "<group>"; };
+		9FA415331A1FF2B000087039 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9FA415341A1FF2B000087039 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9FA415371A1FF2B000087039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FA415391A1FF2B000087039 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9FA4153C1A1FF2B000087039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9FA415421A1FF2B000087039 /* LightIsAwesomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightIsAwesomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA415471A1FF2B000087039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA415481A1FF2B000087039 /* LightIsAwesomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LightIsAwesomeTests.m; sourceTree = "<group>"; };
+		9FD544A01A1FFACB009D3F85 /* Leg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leg.h; sourceTree = "<group>"; };
+		9FD544A11A1FFACB009D3F85 /* Leg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leg.m; sourceTree = "<group>"; };
+		9FD544A21A1FFACB009D3F85 /* PatternSlice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternSlice.h; sourceTree = "<group>"; };
+		9FD544A31A1FFACB009D3F85 /* PatternSlice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternSlice.m; sourceTree = "<group>"; };
+		D5B1470EBCF483C71DE43037 /* Pods-LightIsAwesome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightIsAwesome.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightIsAwesome/Pods-LightIsAwesome.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FA415231A1FF2B000087039 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F54D1341A22B981005EF2EC /* Foundation.framework in Frameworks */,
+				84B0EAD7D39AC1666DEDCCBC /* libPods-LightIsAwesome.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA4153F1A1FF2B000087039 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FA4151D1A1FF2B000087039 = {
+			isa = PBXGroup;
+			children = (
+				9FA415281A1FF2B000087039 /* LightIsAwesome */,
+				9FA415451A1FF2B000087039 /* LightIsAwesomeTests */,
+				9FA415271A1FF2B000087039 /* Products */,
+				CEE3C12052151EA143F63A62 /* Pods */,
+				DAC02FA114068406FD370A93 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9FA415271A1FF2B000087039 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FA415261A1FF2B000087039 /* LightIsAwesome.app */,
+				9FA415421A1FF2B000087039 /* LightIsAwesomeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FA415281A1FF2B000087039 /* LightIsAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				9FD544A01A1FFACB009D3F85 /* Leg.h */,
+				9FD544A11A1FFACB009D3F85 /* Leg.m */,
+				9FD544A21A1FFACB009D3F85 /* PatternSlice.h */,
+				9FD544A31A1FFACB009D3F85 /* PatternSlice.m */,
+				9FA4152D1A1FF2B000087039 /* AppDelegate.h */,
+				9FA4152E1A1FF2B000087039 /* AppDelegate.m */,
+				9FA415331A1FF2B000087039 /* ViewController.h */,
+				9FA415341A1FF2B000087039 /* ViewController.m */,
+				9FA415361A1FF2B000087039 /* Main.storyboard */,
+				9FA415391A1FF2B000087039 /* Images.xcassets */,
+				9FA4153B1A1FF2B000087039 /* LaunchScreen.xib */,
+				9FA415301A1FF2B000087039 /* LightIsAwesome.xcdatamodeld */,
+				9FA415291A1FF2B000087039 /* Supporting Files */,
+				9F54D1301A22B936005EF2EC /* BluetoothSingleton.h */,
+				9F54D1311A22B936005EF2EC /* BluetoothSingleton.m */,
+			);
+			path = LightIsAwesome;
+			sourceTree = "<group>";
+		};
+		9FA415291A1FF2B000087039 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FA4152A1A1FF2B000087039 /* Info.plist */,
+				9FA4152B1A1FF2B000087039 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FA415451A1FF2B000087039 /* LightIsAwesomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				9FA415481A1FF2B000087039 /* LightIsAwesomeTests.m */,
+				9FA415461A1FF2B000087039 /* Supporting Files */,
+			);
+			path = LightIsAwesomeTests;
+			sourceTree = "<group>";
+		};
+		9FA415461A1FF2B000087039 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FA415471A1FF2B000087039 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEE3C12052151EA143F63A62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				535EECFC2E42CBAB5CD18844 /* Pods-LightIsAwesome.debug.xcconfig */,
+				D5B1470EBCF483C71DE43037 /* Pods-LightIsAwesome.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DAC02FA114068406FD370A93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F54D1331A22B981005EF2EC /* Foundation.framework */,
+				0F82B59467D44A397ADCB0DA /* libPods-LightIsAwesome.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FA415251A1FF2B000087039 /* LightIsAwesome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA4154C1A1FF2B000087039 /* Build configuration list for PBXNativeTarget "LightIsAwesome" */;
+			buildPhases = (
+				374904EB4FC70DB17D4FA55D /* Check Pods Manifest.lock */,
+				9FA415221A1FF2B000087039 /* Sources */,
+				9FA415231A1FF2B000087039 /* Frameworks */,
+				9FA415241A1FF2B000087039 /* Resources */,
+				8F92C002D78902FE7082FF5E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LightIsAwesome;
+			productName = LightIsAwesome;
+			productReference = 9FA415261A1FF2B000087039 /* LightIsAwesome.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9FA415411A1FF2B000087039 /* LightIsAwesomeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA4154F1A1FF2B000087039 /* Build configuration list for PBXNativeTarget "LightIsAwesomeTests" */;
+			buildPhases = (
+				9FA4153E1A1FF2B000087039 /* Sources */,
+				9FA4153F1A1FF2B000087039 /* Frameworks */,
+				9FA415401A1FF2B000087039 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FA415441A1FF2B000087039 /* PBXTargetDependency */,
+			);
+			name = LightIsAwesomeTests;
+			productName = LightIsAwesomeTests;
+			productReference = 9FA415421A1FF2B000087039 /* LightIsAwesomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FA4151E1A1FF2B000087039 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Kenneth Siu";
+				TargetAttributes = {
+					9FA415251A1FF2B000087039 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					9FA415411A1FF2B000087039 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 9FA415251A1FF2B000087039;
+					};
+				};
+			};
+			buildConfigurationList = 9FA415211A1FF2B000087039 /* Build configuration list for PBXProject "LightIsAwesome" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9FA4151D1A1FF2B000087039;
+			productRefGroup = 9FA415271A1FF2B000087039 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FA415251A1FF2B000087039 /* LightIsAwesome */,
+				9FA415411A1FF2B000087039 /* LightIsAwesomeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FA415241A1FF2B000087039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA415381A1FF2B000087039 /* Main.storyboard in Resources */,
+				9FA4153D1A1FF2B000087039 /* LaunchScreen.xib in Resources */,
+				9FA4153A1A1FF2B000087039 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA415401A1FF2B000087039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		374904EB4FC70DB17D4FA55D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F92C002D78902FE7082FF5E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LightIsAwesome/Pods-LightIsAwesome-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FA415221A1FF2B000087039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA415321A1FF2B000087039 /* LightIsAwesome.xcdatamodeld in Sources */,
+				9FD544A41A1FFACB009D3F85 /* Leg.m in Sources */,
+				9FA4152F1A1FF2B000087039 /* AppDelegate.m in Sources */,
+				9FD544A51A1FFACB009D3F85 /* PatternSlice.m in Sources */,
+				9FA415351A1FF2B000087039 /* ViewController.m in Sources */,
+				9FA4152C1A1FF2B000087039 /* main.m in Sources */,
+				9F54D1321A22B936005EF2EC /* BluetoothSingleton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA4153E1A1FF2B000087039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA415491A1FF2B000087039 /* LightIsAwesomeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9FA415441A1FF2B000087039 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FA415251A1FF2B000087039 /* LightIsAwesome */;
+			targetProxy = 9FA415431A1FF2B000087039 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9FA415361A1FF2B000087039 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FA415371A1FF2B000087039 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9FA4153B1A1FF2B000087039 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FA4153C1A1FF2B000087039 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9FA4154A1A1FF2B000087039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9FA4154B1A1FF2B000087039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9FA4154D1A1FF2B000087039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 535EECFC2E42CBAB5CD18844 /* Pods-LightIsAwesome.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LightIsAwesome/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9FA4154E1A1FF2B000087039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5B1470EBCF483C71DE43037 /* Pods-LightIsAwesome.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LightIsAwesome/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9FA415501A1FF2B000087039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LightIsAwesomeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightIsAwesome.app/LightIsAwesome";
+			};
+			name = Debug;
+		};
+		9FA415511A1FF2B000087039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LightIsAwesomeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightIsAwesome.app/LightIsAwesome";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FA415211A1FF2B000087039 /* Build configuration list for PBXProject "LightIsAwesome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA4154A1A1FF2B000087039 /* Debug */,
+				9FA4154B1A1FF2B000087039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FA4154C1A1FF2B000087039 /* Build configuration list for PBXNativeTarget "LightIsAwesome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA4154D1A1FF2B000087039 /* Debug */,
+				9FA4154E1A1FF2B000087039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FA4154F1A1FF2B000087039 /* Build configuration list for PBXNativeTarget "LightIsAwesomeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA415501A1FF2B000087039 /* Debug */,
+				9FA415511A1FF2B000087039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9FA415301A1FF2B000087039 /* LightIsAwesome.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9FA415311A1FF2B000087039 /* LightIsAwesome.xcdatamodel */,
+			);
+			currentVersion = 9FA415311A1FF2B000087039 /* LightIsAwesome.xcdatamodel */;
+			path = LightIsAwesome.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9FA4151E1A1FF2B000087039 /* Project object */;
+}
