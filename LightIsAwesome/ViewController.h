@@ -19,4 +19,8 @@
 
 @property NSTimer *loadColorTimer;
 
+@property NSMutableArray *arrayOfPatterns;
+
+@property UIPickerView *patternPicker;
+
 @end

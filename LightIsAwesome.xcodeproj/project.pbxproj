@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		84B0EAD7D39AC1666DEDCCBC /* libPods-LightIsAwesome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F82B59467D44A397ADCB0DA /* libPods-LightIsAwesome.a */; };
+		9F4725D01A2E9AC90061B7FF /* TabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4725CF1A2E9AC90061B7FF /* TabController.m */; };
 		9F54D1321A22B936005EF2EC /* BluetoothSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54D1311A22B936005EF2EC /* BluetoothSingleton.m */; };
 		9F54D1341A22B981005EF2EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F54D1331A22B981005EF2EC /* Foundation.framework */; };
 		9FA4152C1A1FF2B000087039 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4152B1A1FF2B000087039 /* main.m */; };
 		9FA4152F1A1FF2B000087039 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4152E1A1FF2B000087039 /* AppDelegate.m */; };
 		9FA415321A1FF2B000087039 /* LightIsAwesome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FA415301A1FF2B000087039 /* LightIsAwesome.xcdatamodeld */; };
 		9FA415351A1FF2B000087039 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA415341A1FF2B000087039 /* ViewController.m */; };
-		9FA415381A1FF2B000087039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA415361A1FF2B000087039 /* Main.storyboard */; };
 		9FA4153A1A1FF2B000087039 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA415391A1FF2B000087039 /* Images.xcassets */; };
-		9FA4153D1A1FF2B000087039 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA4153B1A1FF2B000087039 /* LaunchScreen.xib */; };
 		9FA415491A1FF2B000087039 /* LightIsAwesomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA415481A1FF2B000087039 /* LightIsAwesomeTests.m */; };
 		9FD544A41A1FFACB009D3F85 /* Leg.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD544A11A1FFACB009D3F85 /* Leg.m */; };
 		9FD544A51A1FFACB009D3F85 /* PatternSlice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD544A31A1FFACB009D3F85 /* PatternSlice.m */; };
@@ -35,6 +34,8 @@
 /* Begin PBXFileReference section */
 		0F82B59467D44A397ADCB0DA /* libPods-LightIsAwesome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LightIsAwesome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		535EECFC2E42CBAB5CD18844 /* Pods-LightIsAwesome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightIsAwesome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LightIsAwesome/Pods-LightIsAwesome.debug.xcconfig"; sourceTree = "<group>"; };
+		9F4725CE1A2E9AC90061B7FF /* TabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabController.h; sourceTree = "<group>"; };
+		9F4725CF1A2E9AC90061B7FF /* TabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabController.m; sourceTree = "<group>"; };
 		9F54D1301A22B936005EF2EC /* BluetoothSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothSingleton.h; sourceTree = "<group>"; };
 		9F54D1311A22B936005EF2EC /* BluetoothSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothSingleton.m; sourceTree = "<group>"; };
 		9F54D1331A22B981005EF2EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,9 +47,7 @@
 		9FA415311A1FF2B000087039 /* LightIsAwesome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LightIsAwesome.xcdatamodel; sourceTree = "<group>"; };
 		9FA415331A1FF2B000087039 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9FA415341A1FF2B000087039 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9FA415371A1FF2B000087039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FA415391A1FF2B000087039 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9FA4153C1A1FF2B000087039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9FA415421A1FF2B000087039 /* LightIsAwesomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightIsAwesomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA415471A1FF2B000087039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FA415481A1FF2B000087039 /* LightIsAwesomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LightIsAwesomeTests.m; sourceTree = "<group>"; };
@@ -102,6 +101,8 @@
 		9FA415281A1FF2B000087039 /* LightIsAwesome */ = {
 			isa = PBXGroup;
 			children = (
+				9F4725CE1A2E9AC90061B7FF /* TabController.h */,
+				9F4725CF1A2E9AC90061B7FF /* TabController.m */,
 				9FD544A01A1FFACB009D3F85 /* Leg.h */,
 				9FD544A11A1FFACB009D3F85 /* Leg.m */,
 				9FD544A21A1FFACB009D3F85 /* PatternSlice.h */,
@@ -110,9 +111,7 @@
 				9FA4152E1A1FF2B000087039 /* AppDelegate.m */,
 				9FA415331A1FF2B000087039 /* ViewController.h */,
 				9FA415341A1FF2B000087039 /* ViewController.m */,
-				9FA415361A1FF2B000087039 /* Main.storyboard */,
 				9FA415391A1FF2B000087039 /* Images.xcassets */,
-				9FA4153B1A1FF2B000087039 /* LaunchScreen.xib */,
 				9FA415301A1FF2B000087039 /* LightIsAwesome.xcdatamodeld */,
 				9FA415291A1FF2B000087039 /* Supporting Files */,
 				9F54D1301A22B936005EF2EC /* BluetoothSingleton.h */,
@@ -247,8 +246,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FA415381A1FF2B000087039 /* Main.storyboard in Resources */,
-				9FA4153D1A1FF2B000087039 /* LaunchScreen.xib in Resources */,
 				9FA4153A1A1FF2B000087039 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +302,7 @@
 				9FA4152F1A1FF2B000087039 /* AppDelegate.m in Sources */,
 				9FD544A51A1FFACB009D3F85 /* PatternSlice.m in Sources */,
 				9FA415351A1FF2B000087039 /* ViewController.m in Sources */,
+				9F4725D01A2E9AC90061B7FF /* TabController.m in Sources */,
 				9FA4152C1A1FF2B000087039 /* main.m in Sources */,
 				9F54D1321A22B936005EF2EC /* BluetoothSingleton.m in Sources */,
 			);
@@ -327,25 +325,6 @@
 			targetProxy = 9FA415431A1FF2B000087039 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9FA415361A1FF2B000087039 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9FA415371A1FF2B000087039 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9FA4153B1A1FF2B000087039 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9FA4153C1A1FF2B000087039 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9FA4154A1A1FF2B000087039 /* Debug */ = {

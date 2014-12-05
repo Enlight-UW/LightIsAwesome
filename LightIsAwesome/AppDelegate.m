@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "TabController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    TabController *tabBar = [[TabController alloc] init];
+    ViewController *vc = [[ViewController alloc] init];
+    vc.tabBarItem.title = @"WHAT'S UP";
+    vc.tabBarItem.tag = 1;
+    
+    //TODO: Add second view controller here
+    
+    tabBar.viewControllers = [NSArray arrayWithObjects:vc, nil];
+    
+    self.window.rootViewController = tabBar;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

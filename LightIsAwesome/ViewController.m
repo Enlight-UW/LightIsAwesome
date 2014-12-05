@@ -20,14 +20,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    CGRect screenFrame = [[UIScreen mainScreen] bounds];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenFrame.size.width, screenFrame.size.height - 49)];
+    screenFrame = self.view.frame;
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     self.legbuttons = [[NSMutableArray alloc] init];
     
-    // Do any additional setup after loading the view, typically from a nib.
-    CGRect screenFrame = self.view.frame;
+    // Do any additional setup after loading the view, typically from a nib
     float widthOfButton = screenFrame.size.width / NUM_LEGS;
     
-    float startHeightOfbutton = screenFrame.size.height / 5.0f;
+    float startHeightOfbutton = screenFrame.size.height / 7.0f;
     float heightOfButton = screenFrame.size.height / 10.0f;
     
     //make dem buttoms
