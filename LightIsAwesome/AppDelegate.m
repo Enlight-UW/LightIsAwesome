@@ -28,8 +28,6 @@
     
     //TODO: Add second view controller here
     
-   
-    
     self.window.rootViewController = vc;
     
     [self.window makeKeyAndVisible];
