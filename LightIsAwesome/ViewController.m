@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _running = NO;
     
     self.connected = NO;
     
@@ -109,16 +110,18 @@
     [patternPickerButton addTarget:self action:@selector(showPatternPicker:) forControlEvents:UIControlEventTouchDown];
     
     
-    UIButton *startStopButton = [[UIButton alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-100, [[UIScreen mainScreen] bounds].size.width, 51)];
+    self.startStopButton = [[UIButton alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-100, [[UIScreen mainScreen] bounds].size.width, 51)];
     
-    [startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+    [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
     
-    [startStopButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.startStopButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
-    [startStopButton addTarget:self action:@selector(startOrStop:) forControlEvents:UIControlEventTouchDown];
+    [self.startStopButton addTarget:self action:@selector(startOrStop:) forControlEvents:UIControlEventTouchDown];
 
+    [self.startStopButton setHidden:YES];
+    [self.startStopButton setBackgroundColor:[UIColor greenColor]];
     
-    
+    [self.view addSubview:self.startStopButton];
     
     
     [self.view addSubview:patternPickerButton];
@@ -149,18 +152,15 @@
     self.arrayOfPatterns = [[NSMutableArray alloc] init];
     
     
-    //HERE BEGINS JIMMY'S PATTERN OF HORROR
-    
-    UIColor *tempColor;
-    PatternSlice *tempSlice;
-    int durationFactor = .1;
+    int durationFactor = 1.0f;
     //(1,0,0)-(1,1,0)
     NSMutableArray *redYellow = [[NSMutableArray alloc] init];
     for(float i=.1; i<=1; i=i+.1)
         
     {
-        tempColor = [UIColor colorWithRed:1. green:i blue:0 alpha:1];
-        tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
+        
+        UIColor *tempColor = [UIColor colorWithRed:1. green:i blue:0 alpha:1];
+        PatternSlice *tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
         [redYellow addObject: tempSlice];
     }
     
@@ -168,95 +168,96 @@
     NSMutableArray *yellowGreen = [[NSMutableArray alloc] init];
     for(float i=.1; i<=1; i+=.1)
     {
-        tempColor = [UIColor colorWithRed:1.-i green:1 blue:0 alpha:1];
-        tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
+        UIColor *tempColor = [UIColor colorWithRed:1.-i green:1 blue:0 alpha:1];
+        PatternSlice *tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
         [yellowGreen addObject: tempSlice];
     }
     //(0,1,0)-(0,1,1)
     NSMutableArray *greenCyan = [[NSMutableArray alloc] init];
     for(float i=.1; i<=1; i+=.1)
     {
-        tempColor = [UIColor colorWithRed:0. green:1. blue:i alpha:1];
-        tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
+        UIColor *tempColor = [UIColor colorWithRed:0. green:1. blue:i alpha:1];
+        PatternSlice *tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
         [greenCyan addObject: tempSlice];
     }
     //(0,1,1)-(0,0,1)
     NSMutableArray *cyanBlue = [[NSMutableArray alloc] init];
     for(float i=.1; i<=1; i+=.1)
     {
-        tempColor = [UIColor colorWithRed:0. green:1.-i blue:1 alpha:1];
-        tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
+        UIColor *tempColor = [UIColor colorWithRed:0. green:1.-i blue:1 alpha:1];
+        PatternSlice *tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
         [cyanBlue addObject: tempSlice];
     }
     //(0,0,1)-(1,0,1)
     NSMutableArray *bluePurple = [[NSMutableArray alloc] init];
     for(float i=.1; i<=1; i+=.1)
     {
-        tempColor = [UIColor colorWithRed:i green:0 blue:1 alpha:1];
-        tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
+        UIColor *tempColor = [UIColor colorWithRed:i green:0 blue:1 alpha:1];
+        PatternSlice *tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
         [bluePurple addObject: tempSlice];
     }
     //(1,0,1)-(1,0,0)
     NSMutableArray *purpleRed = [[NSMutableArray alloc] init];
     for(float i=.1; i<=1; i+=.1)
     {
-        tempColor = [UIColor colorWithRed:1. green:0 blue:1-i alpha:1];
-        tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
+        UIColor *tempColor = [UIColor colorWithRed:1. green:0 blue:1-i alpha:1];
+        PatternSlice *tempSlice = [[PatternSlice alloc] initWithDuration:durationFactor withColor:tempColor];
         [purpleRed addObject: tempSlice];
     }
     
-    NSMutableSet *leg1Set = [NSMutableSet setWithArray:redYellow];
-    [leg1Set addObjectsFromArray:yellowGreen];
-    [leg1Set addObjectsFromArray:greenCyan];
-    [leg1Set addObjectsFromArray:cyanBlue];
-    [leg1Set addObjectsFromArray:bluePurple];
-    [leg1Set addObjectsFromArray:purpleRed];
-    NSMutableArray *leg1Pattern = [[leg1Set allObjects] mutableCopy];
+    NSMutableArray *leg1Pattern = [[NSMutableArray alloc] init];
+    [leg1Pattern addObjectsFromArray:redYellow];
+    [leg1Pattern addObjectsFromArray:yellowGreen];
+    [leg1Pattern addObjectsFromArray:greenCyan];
+    [leg1Pattern addObjectsFromArray:cyanBlue];
+    [leg1Pattern addObjectsFromArray:bluePurple];
+    [leg1Pattern addObjectsFromArray:purpleRed];
     
-    NSMutableSet *leg2Set = [NSMutableSet setWithArray:yellowGreen];
-    [leg2Set addObjectsFromArray:greenCyan];
-    [leg2Set addObjectsFromArray:cyanBlue];
-    [leg2Set addObjectsFromArray:bluePurple];
-    [leg2Set addObjectsFromArray:purpleRed];
-    [leg2Set addObjectsFromArray:redYellow];
-    NSMutableArray *leg2Pattern = [[leg2Set allObjects] mutableCopy];
     
-    NSMutableSet *leg3Set = [NSMutableSet setWithArray:greenCyan];
-    [leg3Set addObjectsFromArray:cyanBlue];
-    [leg3Set addObjectsFromArray:bluePurple];
-    [leg3Set addObjectsFromArray:purpleRed];
-    [leg3Set addObjectsFromArray:redYellow];
-    [leg3Set addObjectsFromArray:yellowGreen];
-    NSMutableArray *leg3Pattern = [[leg3Set allObjects] mutableCopy];
+    NSMutableArray *leg2Pattern = [[NSMutableArray alloc] init];
+    [leg2Pattern addObjectsFromArray:yellowGreen];
+    [leg2Pattern addObjectsFromArray:greenCyan];
+    [leg2Pattern addObjectsFromArray:cyanBlue];
+    [leg2Pattern addObjectsFromArray:bluePurple];
+    [leg2Pattern addObjectsFromArray:purpleRed];
+    [leg2Pattern addObjectsFromArray:redYellow];
     
-    NSMutableSet *leg4Set = [NSMutableSet setWithArray:cyanBlue];
-    [leg4Set addObjectsFromArray:bluePurple];
-    [leg4Set addObjectsFromArray:purpleRed];
-    [leg4Set addObjectsFromArray:redYellow];
-    [leg4Set addObjectsFromArray:yellowGreen];
-    [leg4Set addObjectsFromArray:greenCyan];
-    NSMutableArray *leg4Pattern = [[leg4Set allObjects] mutableCopy];
     
-    NSMutableSet *leg5Set = [NSMutableSet setWithArray:bluePurple];
-    [leg5Set addObjectsFromArray:purpleRed];
-    [leg5Set addObjectsFromArray:redYellow];
-    [leg5Set addObjectsFromArray:yellowGreen];
-    [leg5Set addObjectsFromArray:greenCyan];
-    [leg5Set addObjectsFromArray:cyanBlue];
-    NSMutableArray *leg5Pattern = [[leg5Set allObjects] mutableCopy];
+    NSMutableArray *leg3Pattern = [[NSMutableArray alloc] init];[leg3Pattern addObjectsFromArray:greenCyan];
+    [leg3Pattern addObjectsFromArray:cyanBlue];
+    [leg3Pattern addObjectsFromArray:bluePurple];
+    [leg3Pattern addObjectsFromArray:purpleRed];
+    [leg3Pattern addObjectsFromArray:redYellow];
+    [leg3Pattern addObjectsFromArray:yellowGreen];
     
-    NSMutableSet *leg6Set = [NSMutableSet setWithArray:purpleRed];
-    [leg6Set addObjectsFromArray:redYellow];
-    [leg6Set addObjectsFromArray:yellowGreen];
-    [leg6Set addObjectsFromArray:greenCyan];
-    [leg6Set addObjectsFromArray:cyanBlue];
-    [leg6Set addObjectsFromArray:bluePurple];
-    NSMutableArray *leg6Pattern = [[leg6Set allObjects] mutableCopy];
+    
+    NSMutableArray *leg4Pattern = [[NSMutableArray alloc] init];[leg4Pattern addObjectsFromArray:cyanBlue];
+    [leg4Pattern addObjectsFromArray:bluePurple];
+    [leg4Pattern addObjectsFromArray:purpleRed];
+    [leg4Pattern addObjectsFromArray:redYellow];
+    [leg4Pattern addObjectsFromArray:yellowGreen];
+    [leg4Pattern addObjectsFromArray:greenCyan];
+    
+    
+    NSMutableArray *leg5Pattern = [[NSMutableArray alloc] init];[leg5Pattern addObjectsFromArray:bluePurple];
+    [leg5Pattern addObjectsFromArray:purpleRed];
+    [leg5Pattern addObjectsFromArray:redYellow];
+    [leg5Pattern addObjectsFromArray:yellowGreen];
+    [leg5Pattern addObjectsFromArray:greenCyan];
+    [leg5Pattern addObjectsFromArray:cyanBlue];
+    
+    
+    NSMutableArray *leg6Pattern = [[NSMutableArray alloc] init];[leg6Pattern addObjectsFromArray:purpleRed];
+    [leg6Pattern addObjectsFromArray:redYellow];
+    [leg6Pattern addObjectsFromArray:yellowGreen];
+    [leg6Pattern addObjectsFromArray:greenCyan];
+    [leg6Pattern addObjectsFromArray:cyanBlue];
+    [leg6Pattern addObjectsFromArray:bluePurple];
+    
+    
     Pattern *jimmysPattern = [[Pattern alloc] initWithTitle: @"Rainbow Swirl" withLeg1Pattern:leg1Pattern withLeg2Pattern:leg2Pattern withLeg3Pattern: leg3Pattern withLeg4Pattern:leg4Pattern withLeg5Pattern:leg5Pattern withLeg6Pattern:leg6Pattern];
     
     //END PATTERN OF HORROr
-    
-
     
     
     [_arrayOfPatterns addObject:jimmysPattern];
@@ -291,6 +292,7 @@
 {
     [self.colorWheel setHidden:0];
     [_patternPicker setHidden:YES];
+    [self.startStopButton setHidden:YES];
     for(UIButton *tempButt in self.legbuttons)
     {
         [tempButt setEnabled:YES];
@@ -300,11 +302,13 @@
 {
     [self.colorWheel setHidden:YES];
     [_patternPicker setHidden:NO];
+    [self.startStopButton setHidden:NO];
     for(UIButton *tempButt in self.legbuttons)
     {
         [[tempButt layer] setBorderWidth:0.0f];
         [tempButt setSelected:NO];
         [tempButt setEnabled:NO];
+        
         
     }
 }
@@ -358,13 +362,69 @@
 }
 -(IBAction)startOrStop:(id)sender
 {
-    //for(PatternSlice *tempSlice in [_patterpicker])
+    if(!_running)
+    {
+        [sender setBackgroundColor:[UIColor redColor]];
+        [sender setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.colorPickerButton setEnabled:NO];
+        _running = YES;
+        
+        Pattern *tempPattern = [_arrayOfPatterns objectAtIndex:[_patternPicker selectedRowInComponent:0]];
+        
+        for(int i = 0; i<[tempPattern.legPattern count]; i++)
+        {
+            NSMutableArray *patternArray = (NSMutableArray*) [tempPattern.legPattern objectAtIndex:i];
+            PatternSlice *firstSlice = (PatternSlice*) [patternArray objectAtIndex:0];
+            [[self.legbuttons objectAtIndex:i] setBackgroundColor:firstSlice.color];
+            NSString *putInTimer = [NSString stringWithFormat:@"%li|%d|%d", (long)[_patternPicker selectedRowInComponent:0], i, 0];
+            [NSTimer scheduledTimerWithTimeInterval:firstSlice.duration target:self selector:@selector(patternTimer:) userInfo:putInTimer repeats:NO];
+            
+        }
+        
+    }
+    
+    else
+    {
+        [sender setBackgroundColor:[UIColor greenColor]];
+        [sender setTitle:@"Start" forState:UIControlStateNormal];
+        [self.colorPickerButton setEnabled:YES];
+        _running = false;
+        
+        
+    }
+    return;
 }
 -(UIColor*) inverseColor:(UIColor*) color
 {
     CGFloat r,g,b,a;
     [color getRed:&r green:&g blue:&b alpha:&a];
     return [UIColor colorWithRed:1.-r green:1.-g blue:1.-b alpha:a];
+}
+
+-(IBAction)patternTimer:(id)sender
+{
+    if(_running)
+    {
+        NSTimer* timer = (NSTimer*)sender;
+        NSArray *array = [(NSString*)timer.userInfo componentsSeparatedByString:@"|"];
+        int patternNumber = [[array objectAtIndex:0] intValue];
+        int legNumber = [[array objectAtIndex:1] intValue];
+        int sliceNumber = [[array objectAtIndex:2] intValue];
+        Pattern *tempPattern = [_arrayOfPatterns objectAtIndex:patternNumber];
+        sliceNumber = sliceNumber + 1;
+        
+        if(sliceNumber == [[tempPattern.legPattern objectAtIndex:legNumber] count]) {
+            sliceNumber = 0;
+        }
+        
+        PatternSlice *nextSlice = [[tempPattern.legPattern objectAtIndex:legNumber] objectAtIndex:sliceNumber];
+        [[self.legbuttons objectAtIndex:legNumber] setBackgroundColor:nextSlice.color];
+        
+        NSString *putInTimer = [NSString stringWithFormat:@"%d|%d|%d", patternNumber, legNumber, sliceNumber];
+        [NSTimer scheduledTimerWithTimeInterval:nextSlice.duration target:self selector:@selector(patternTimer:) userInfo:putInTimer repeats:NO];
+        
+        [timer invalidate];
+    }
 }
 
 //ibaction that button is selected

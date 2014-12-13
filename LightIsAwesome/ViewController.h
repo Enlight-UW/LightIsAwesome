@@ -37,4 +37,10 @@
 
 @property NSTimer *sendDataTimer;
 
+@property BOOL running;
+
+@property UIButton *colorPickerButton;
+
+@property UIButton *startStopButton;
+
 @end
