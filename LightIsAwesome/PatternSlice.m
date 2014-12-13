@@ -10,14 +10,14 @@
 
 @implementation PatternSlice
 
--(id) initWithDuration:(float)duration withColor:(UIColor*)color withLegNumber:(int)nLegNum {
+-(id) initWithDuration:(float)duration withColor:(UIColor*)color {
     
     self = [super init];
     
     if(self) {
         self.duration = duration;
         self.color = color;
-        self.legNumber = nLegNum;
+       // self.legNumber = nLegNum;
         return self;
     }
     

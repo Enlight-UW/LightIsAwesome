@@ -11,14 +11,17 @@
 		9F4725D01A2E9AC90061B7FF /* TabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4725CF1A2E9AC90061B7FF /* TabController.m */; };
 		9F54D1321A22B936005EF2EC /* BluetoothSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54D1311A22B936005EF2EC /* BluetoothSingleton.m */; };
 		9F54D1341A22B981005EF2EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F54D1331A22B981005EF2EC /* Foundation.framework */; };
+		9F5A5BF91A37CE09004E655A /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A5BF71A37CE09004E655A /* BLE.m */; };
 		9FA4152C1A1FF2B000087039 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4152B1A1FF2B000087039 /* main.m */; };
 		9FA4152F1A1FF2B000087039 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4152E1A1FF2B000087039 /* AppDelegate.m */; };
 		9FA415321A1FF2B000087039 /* LightIsAwesome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FA415301A1FF2B000087039 /* LightIsAwesome.xcdatamodeld */; };
 		9FA415351A1FF2B000087039 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA415341A1FF2B000087039 /* ViewController.m */; };
 		9FA4153A1A1FF2B000087039 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA415391A1FF2B000087039 /* Images.xcassets */; };
 		9FA415491A1FF2B000087039 /* LightIsAwesomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA415481A1FF2B000087039 /* LightIsAwesomeTests.m */; };
+		9FAEB77D1A3CD6250099DD53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FAEB77C1A3CD6250099DD53 /* Default-568h@2x.png */; };
 		9FD544A41A1FFACB009D3F85 /* Leg.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD544A11A1FFACB009D3F85 /* Leg.m */; };
 		9FD544A51A1FFACB009D3F85 /* PatternSlice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD544A31A1FFACB009D3F85 /* PatternSlice.m */; };
+		EDA827481A327E7700F9E409 /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA827471A327E7700F9E409 /* Pattern.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		9F54D1301A22B936005EF2EC /* BluetoothSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothSingleton.h; sourceTree = "<group>"; };
 		9F54D1311A22B936005EF2EC /* BluetoothSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothSingleton.m; sourceTree = "<group>"; };
 		9F54D1331A22B981005EF2EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9F5A5BF61A37CE09004E655A /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLE.h; sourceTree = "<group>"; };
+		9F5A5BF71A37CE09004E655A /* BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLE.m; sourceTree = "<group>"; };
+		9F5A5BF81A37CE09004E655A /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
 		9FA415261A1FF2B000087039 /* LightIsAwesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightIsAwesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA4152A1A1FF2B000087039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FA4152B1A1FF2B000087039 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,11 +57,14 @@
 		9FA415421A1FF2B000087039 /* LightIsAwesomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightIsAwesomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA415471A1FF2B000087039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FA415481A1FF2B000087039 /* LightIsAwesomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LightIsAwesomeTests.m; sourceTree = "<group>"; };
+		9FAEB77C1A3CD6250099DD53 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9FD544A01A1FFACB009D3F85 /* Leg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leg.h; sourceTree = "<group>"; };
 		9FD544A11A1FFACB009D3F85 /* Leg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leg.m; sourceTree = "<group>"; };
 		9FD544A21A1FFACB009D3F85 /* PatternSlice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternSlice.h; sourceTree = "<group>"; };
 		9FD544A31A1FFACB009D3F85 /* PatternSlice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternSlice.m; sourceTree = "<group>"; };
 		D5B1470EBCF483C71DE43037 /* Pods-LightIsAwesome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightIsAwesome.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightIsAwesome/Pods-LightIsAwesome.release.xcconfig"; sourceTree = "<group>"; };
+		EDA827461A327E7700F9E409 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
+		EDA827471A327E7700F9E409 /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +87,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F5A5BF51A37CE09004E655A /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				9F5A5BF61A37CE09004E655A /* BLE.h */,
+				9F5A5BF71A37CE09004E655A /* BLE.m */,
+				9F5A5BF81A37CE09004E655A /* BLEDefines.h */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
 		9FA4151D1A1FF2B000087039 = {
 			isa = PBXGroup;
 			children = (
+				9FAEB77C1A3CD6250099DD53 /* Default-568h@2x.png */,
 				9FA415281A1FF2B000087039 /* LightIsAwesome */,
 				9FA415451A1FF2B000087039 /* LightIsAwesomeTests */,
 				9FA415271A1FF2B000087039 /* Products */,
@@ -101,16 +121,19 @@
 		9FA415281A1FF2B000087039 /* LightIsAwesome */ = {
 			isa = PBXGroup;
 			children = (
+				9F5A5BF51A37CE09004E655A /* BLE */,
 				9F4725CE1A2E9AC90061B7FF /* TabController.h */,
 				9F4725CF1A2E9AC90061B7FF /* TabController.m */,
 				9FD544A01A1FFACB009D3F85 /* Leg.h */,
 				9FD544A11A1FFACB009D3F85 /* Leg.m */,
-				9FD544A21A1FFACB009D3F85 /* PatternSlice.h */,
-				9FD544A31A1FFACB009D3F85 /* PatternSlice.m */,
 				9FA4152D1A1FF2B000087039 /* AppDelegate.h */,
 				9FA4152E1A1FF2B000087039 /* AppDelegate.m */,
+				9FD544A21A1FFACB009D3F85 /* PatternSlice.h */,
+				9FD544A31A1FFACB009D3F85 /* PatternSlice.m */,
 				9FA415331A1FF2B000087039 /* ViewController.h */,
 				9FA415341A1FF2B000087039 /* ViewController.m */,
+				EDA827461A327E7700F9E409 /* Pattern.h */,
+				EDA827471A327E7700F9E409 /* Pattern.m */,
 				9FA415391A1FF2B000087039 /* Images.xcassets */,
 				9FA415301A1FF2B000087039 /* LightIsAwesome.xcdatamodeld */,
 				9FA415291A1FF2B000087039 /* Supporting Files */,
@@ -215,6 +238,7 @@
 				TargetAttributes = {
 					9FA415251A1FF2B000087039 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 9RSGCSU935;
 					};
 					9FA415411A1FF2B000087039 = {
 						CreatedOnToolsVersion = 6.1;
@@ -247,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FA4153A1A1FF2B000087039 /* Images.xcassets in Resources */,
+				9FAEB77D1A3CD6250099DD53 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +325,8 @@
 				9FA415321A1FF2B000087039 /* LightIsAwesome.xcdatamodeld in Sources */,
 				9FD544A41A1FFACB009D3F85 /* Leg.m in Sources */,
 				9FA4152F1A1FF2B000087039 /* AppDelegate.m in Sources */,
+				9F5A5BF91A37CE09004E655A /* BLE.m in Sources */,
+				EDA827481A327E7700F9E409 /* Pattern.m in Sources */,
 				9FD544A51A1FFACB009D3F85 /* PatternSlice.m in Sources */,
 				9FA415351A1FF2B000087039 /* ViewController.m in Sources */,
 				9F4725D01A2E9AC90061B7FF /* TabController.m in Sources */,
@@ -409,8 +436,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 535EECFC2E42CBAB5CD18844 /* Pods-LightIsAwesome.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LightIsAwesome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -420,8 +447,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5B1470EBCF483C71DE43037 /* Pods-LightIsAwesome.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LightIsAwesome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -440,6 +467,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = LightIsAwesomeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightIsAwesome.app/LightIsAwesome";
@@ -455,6 +483,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = LightIsAwesomeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightIsAwesome.app/LightIsAwesome";

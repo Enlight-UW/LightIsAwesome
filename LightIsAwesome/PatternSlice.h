@@ -15,6 +15,6 @@
 @property UIColor* color;
 @property int legNumber;
 
--(id) initWithDuration:(float)duration withColor:(UIColor*)color withLegNumber:(int)nLegNum;
+-(id) initWithDuration:(float)duration withColor:(UIColor*)color;
 
 @end

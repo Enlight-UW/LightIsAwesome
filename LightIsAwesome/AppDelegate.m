@@ -22,16 +22,15 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    TabController *tabBar = [[TabController alloc] init];
+    
     ViewController *vc = [[ViewController alloc] init];
-    vc.tabBarItem.title = @"WHAT'S UP";
-    vc.tabBarItem.tag = 1;
+    
     
     //TODO: Add second view controller here
     
-    tabBar.viewControllers = [NSArray arrayWithObjects:vc, nil];
+   
     
-    self.window.rootViewController = tabBar;
+    self.window.rootViewController = vc;
     
     [self.window makeKeyAndVisible];
     

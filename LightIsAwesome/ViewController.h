@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Leg.h"
 #import "PatternSlice.h"
+#import "BLE/BLE.h"
 #import <ISColorWheel.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, BLEDelegate>
+
 
 @property NSMutableArray *legbuttons;
 
@@ -22,5 +24,17 @@
 @property NSMutableArray *arrayOfPatterns;
 
 @property UIPickerView *patternPicker;
+
+@property BLE *bleModule;
+
+@property UIButton *connectButton;
+
+@property UIButton *disconnectButton;
+
+@property UIActivityIndicatorView *spinner;
+
+@property BOOL connected;
+
+@property NSTimer *sendDataTimer;
 
 @end
