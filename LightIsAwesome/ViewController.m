@@ -143,11 +143,12 @@
         [self.legbuttons addObject:tempButton];
     }
     
-    float startHeightOfWheel = screenFrame.size.height - screenFrame.size.width;
-    float heightOfWheel = screenFrame.size.width;
+    float startHeightOfWheel = ((screenFrame.size.height - (startHeightOfbutton + heightOfButton - 49)) / 2.0f) + 15.0f;
+    float heightOfWheel = screenFrame.size.height - (startHeightOfWheel) - 49;
     
+    float startWidthOfWheel = (screenFrame.size.width - heightOfWheel) / 2.0f;
     
-    self.colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(0, startHeightOfWheel, heightOfWheel, heightOfWheel)];
+    self.colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(startWidthOfWheel, startHeightOfWheel, heightOfWheel, heightOfWheel)];
     
     self.patternPicker= [[UIPickerView alloc] initWithFrame:CGRectMake(0, startHeightOfWheel, heightOfWheel, heightOfWheel)];
     self.arrayOfPatterns = [[NSMutableArray alloc] init];
