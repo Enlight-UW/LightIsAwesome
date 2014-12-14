@@ -43,4 +43,6 @@
 
 @property UIButton *startStopButton;
 
+@property UIButton *patternPickerButton;
+
 @end

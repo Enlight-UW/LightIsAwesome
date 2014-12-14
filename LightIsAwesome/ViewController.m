@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <QuartzCore/CADisplayLink.h>
 #import <QuartzCore/QuartzCore.h>
 #import "Pattern.h"
 #import "PatternSlice.h"
@@ -92,22 +93,22 @@
     float startHeightOfbutton = screenFrame.size.height / 4.0f;
     float heightOfButton = screenFrame.size.height / 10.0f;
     
-    //make dem buttoms
-    UIButton *colorPickerButton = [[UIButton alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-49, [[UIScreen mainScreen] bounds].size.width/2, 49)];
+    //make buttoms
+    self.colorPickerButton = [[UIButton alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-49, [[UIScreen mainScreen] bounds].size.width/2, 49)];
     
-    [colorPickerButton setTitle:@"Color Picker" forState:UIControlStateNormal];
+    [self.colorPickerButton setTitle:@"Color Picker" forState:UIControlStateNormal];
     
-    [colorPickerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.colorPickerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
-    [colorPickerButton addTarget:self action:@selector(showColorPicker:) forControlEvents:UIControlEventTouchDown];
+    [self.colorPickerButton addTarget:self action:@selector(showColorPicker:) forControlEvents:UIControlEventTouchDown];
     
-    UIButton *patternPickerButton = [[UIButton alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2, [[UIScreen mainScreen] bounds].size.height-49, [[UIScreen mainScreen] bounds].size.width/2, 49)];
+    self.patternPickerButton = [[UIButton alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2, [[UIScreen mainScreen] bounds].size.height-49, [[UIScreen mainScreen] bounds].size.width/2, 49)];
     
-    [patternPickerButton setTitle:@"Pattern Picker" forState:UIControlStateNormal];
+    [self.patternPickerButton setTitle:@"Pattern Picker" forState:UIControlStateNormal];
     
-    [patternPickerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.patternPickerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
-    [patternPickerButton addTarget:self action:@selector(showPatternPicker:) forControlEvents:UIControlEventTouchDown];
+    [self.patternPickerButton addTarget:self action:@selector(showPatternPicker:) forControlEvents:UIControlEventTouchDown];
     
     
     self.startStopButton = [[UIButton alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-100, [[UIScreen mainScreen] bounds].size.width, 51)];
@@ -117,15 +118,15 @@
     [self.startStopButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     [self.startStopButton addTarget:self action:@selector(startOrStop:) forControlEvents:UIControlEventTouchDown];
-
+    
     [self.startStopButton setHidden:YES];
     [self.startStopButton setBackgroundColor:[UIColor greenColor]];
     
     [self.view addSubview:self.startStopButton];
     
     
-    [self.view addSubview:patternPickerButton];
-    [self.view addSubview:colorPickerButton];
+    [self.view addSubview:self.patternPickerButton];
+    [self.view addSubview:self.colorPickerButton];
     for(int i = 0; i < NUM_LEGS; i++) {
         UIButton *tempButton = [[UIButton alloc] initWithFrame:CGRectMake(i * widthOfButton, startHeightOfbutton, widthOfButton, heightOfButton)];
         
@@ -148,11 +149,11 @@
     
     self.colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(0, startHeightOfWheel, heightOfWheel, heightOfWheel)];
     
-     self.patternPicker= [[UIPickerView alloc] initWithFrame:CGRectMake(0, startHeightOfWheel, heightOfWheel, heightOfWheel)];
+    self.patternPicker= [[UIPickerView alloc] initWithFrame:CGRectMake(0, startHeightOfWheel, heightOfWheel, heightOfWheel)];
     self.arrayOfPatterns = [[NSMutableArray alloc] init];
     
     
-    int durationFactor = 1.0f;
+    float durationFactor = 0.2f;
     //(1,0,0)-(1,1,0)
     NSMutableArray *redYellow = [[NSMutableArray alloc] init];
     for(float i=.1; i<=1; i=i+.1)
@@ -356,7 +357,7 @@
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-  
+    
     // This method is triggered whenever the user makes a change to the picker selection.
     // The parameter named row and component represents what was selected.
 }
@@ -364,9 +365,12 @@
 {
     if(!_running)
     {
+        [self.loadColorTimer invalidate];
         [sender setBackgroundColor:[UIColor redColor]];
         [sender setTitle:@"Stop" forState:UIControlStateNormal];
         [self.colorPickerButton setEnabled:NO];
+        [self.patternPickerButton setEnabled:NO];
+        
         _running = YES;
         
         Pattern *tempPattern = [_arrayOfPatterns objectAtIndex:[_patternPicker selectedRowInComponent:0]];
@@ -376,9 +380,11 @@
             NSMutableArray *patternArray = (NSMutableArray*) [tempPattern.legPattern objectAtIndex:i];
             PatternSlice *firstSlice = (PatternSlice*) [patternArray objectAtIndex:0];
             [[self.legbuttons objectAtIndex:i] setBackgroundColor:firstSlice.color];
-            NSString *putInTimer = [NSString stringWithFormat:@"%li|%d|%d", (long)[_patternPicker selectedRowInComponent:0], i, 0];
-            [NSTimer scheduledTimerWithTimeInterval:firstSlice.duration target:self selector:@selector(patternTimer:) userInfo:putInTimer repeats:NO];
+            [[self.legbuttons objectAtIndex:i] setTitleColor:[self inverseColor:firstSlice.color] forState:UIControlStateNormal];
             
+            NSString *putInTimer = [NSString stringWithFormat:@"%li|%d|%d", (long)[_patternPicker selectedRowInComponent:0], i, 0];
+            
+            [NSTimer scheduledTimerWithTimeInterval:firstSlice.duration target:self selector:@selector(patternTimer:) userInfo:putInTimer repeats:NO];
         }
         
     }
@@ -388,9 +394,9 @@
         [sender setBackgroundColor:[UIColor greenColor]];
         [sender setTitle:@"Start" forState:UIControlStateNormal];
         [self.colorPickerButton setEnabled:YES];
-        _running = false;
-        
-        
+        [self.patternPickerButton setEnabled:YES];
+        _running = NO;
+        self.loadColorTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(checkColors:) userInfo:nil repeats:YES];
     }
     return;
 }
@@ -403,9 +409,11 @@
 
 -(IBAction)patternTimer:(id)sender
 {
+    
+    NSTimer* timer = (NSTimer*)sender;
+    
     if(_running)
     {
-        NSTimer* timer = (NSTimer*)sender;
         NSArray *array = [(NSString*)timer.userInfo componentsSeparatedByString:@"|"];
         int patternNumber = [[array objectAtIndex:0] intValue];
         int legNumber = [[array objectAtIndex:1] intValue];
@@ -419,12 +427,15 @@
         
         PatternSlice *nextSlice = [[tempPattern.legPattern objectAtIndex:legNumber] objectAtIndex:sliceNumber];
         [[self.legbuttons objectAtIndex:legNumber] setBackgroundColor:nextSlice.color];
+        [[self.legbuttons objectAtIndex:legNumber] setTitleColor:[self inverseColor:nextSlice.color] forState:UIControlStateNormal];
         
         NSString *putInTimer = [NSString stringWithFormat:@"%d|%d|%d", patternNumber, legNumber, sliceNumber];
-        [NSTimer scheduledTimerWithTimeInterval:nextSlice.duration target:self selector:@selector(patternTimer:) userInfo:putInTimer repeats:NO];
         
-        [timer invalidate];
+        [NSTimer scheduledTimerWithTimeInterval:nextSlice.duration target:self selector:@selector(patternTimer:) userInfo:putInTimer repeats:NO];
     }
+    
+    [timer invalidate];
+    
 }
 
 //ibaction that button is selected
@@ -476,14 +487,13 @@
     [self.disconnectButton setHidden:NO];
     self.connected = YES;
     
-    self.sendDataTimer = [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(sendBTData:) userInfo:nil repeats:NO];
+    self.sendDataTimer = [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(sendBTData:) userInfo:nil repeats:YES];
 }
 
 -(IBAction)sendBTData:(id)sender {
     
     NSData *dataToSend;
     NSString *sendString;
-    NSString *stringSend = @"";
     
     for(int i = 0; i < [self.legbuttons count]; i++) {
         UIButton* butt = (UIButton*)[self.legbuttons objectAtIndex:i];
@@ -498,21 +508,13 @@
         int blueSend = (int)(blue * 255);
         
         //has rgb
-        sendString = [NSString stringWithFormat:@"%d|%d|%d|%d", i+1, redSend, greenSend, blueSend];
+        sendString = [NSString stringWithFormat:@"%d|%d|%d|%d^", i+1, redSend, greenSend, blueSend];
         
-        if(i != 0) {
-            stringSend = [NSString stringWithFormat:@"%@^%@", stringSend, sendString];
-        } else {
-            stringSend = sendString;
-        }
+        dataToSend = [sendString dataUsingEncoding:NSUTF8StringEncoding];
+        NSLog(sendString);
+        
+        [bleModule write:dataToSend];
     }
-    
-    stringSend = [NSString stringWithFormat:@"%@*", stringSend];
-    
-    dataToSend = [stringSend dataUsingEncoding:NSUTF8StringEncoding];
-    NSLog(stringSend);
-    
-    [bleModule write:dataToSend];
 }
 
 -(void) bleDidDisconnect {
@@ -522,7 +524,7 @@
 }
 
 -(void) bleDidUpdateRSSI:(NSNumber *) rssi {
-
+    
 }
 
 -(void) bleDidReceiveData:(unsigned char *) data length:(int) length {
