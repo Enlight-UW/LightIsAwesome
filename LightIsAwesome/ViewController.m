@@ -150,7 +150,7 @@
     
     self.colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(startWidthOfWheel, startHeightOfWheel, heightOfWheel, heightOfWheel)];
     
-    self.patternPicker= [[UIPickerView alloc] initWithFrame:CGRectMake(0, startHeightOfWheel, heightOfWheel, heightOfWheel)];
+    self.patternPicker= [[UIPickerView alloc] initWithFrame:CGRectMake(0, startHeightOfWheel, screenFrame.size.width, heightOfWheel)];
     self.arrayOfPatterns = [[NSMutableArray alloc] init];
     
     
@@ -512,7 +512,6 @@
         sendString = [NSString stringWithFormat:@"%d|%d|%d|%d^", i+1, redSend, greenSend, blueSend];
         
         dataToSend = [sendString dataUsingEncoding:NSUTF8StringEncoding];
-        NSLog(sendString);
         
         [bleModule write:dataToSend];
     }
