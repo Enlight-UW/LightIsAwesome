@@ -130,7 +130,7 @@
     for(int i = 0; i < NUM_LEGS; i++) {
         UIButton *tempButton = [[UIButton alloc] initWithFrame:CGRectMake(i * widthOfButton, startHeightOfbutton, widthOfButton, heightOfButton)];
         
-        [tempButton setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
+        [tempButton setTitle:[NSString stringWithFormat:@"%d", i + 1] forState:UIControlStateNormal];
         
         [tempButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
