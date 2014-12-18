@@ -520,6 +520,8 @@
 -(void) bleDidDisconnect {
     [self.disconnectButton setHidden:YES];
     self.connected = NO;
+    [self.spinner stopAnimating];
+    [self.spinner setHidden:YES];
     [self.connectButton setHidden:NO];
 }
 
